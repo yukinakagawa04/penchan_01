@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/sample.css">
+  <title>じゃんけん</title>
+</head>
+
+<body>
+  <header>
+    <h1>じゃんけん</h1>
+  </header>
+
+  <main>
+    <ul>
+      <li id="gu_btn">グー</li>
+      <li id="cho_btn">チョキ</li>
+      <li id="par_btn">パー</li>
+    </ul>
+    <div id="com_hand">コンピュータの出した手は？</div>
+    <div id="view">結果は？</div>
+  </main>
+
+  <footer>フッター</footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    //ここに処理を追加
+    $('#gu_btn').on('click', function () {
+      // alert('OK')
+
+      // 1. 乱数(1~5)
+      const gu = Math.floor(Math.random() * 3);
+      console.log(gu);
+
+      // 2. 分岐処理
+      let view = '';
+      let com_hand = '';
+
+      if (gu === 0) {
+        com_hand = 'グー';
+        view = 'あいこ';
+      } else if (gu === 1) {
+        com_hand = 'チョキ';
+        view = '勝ち';
+      } else {
+        com_hand = 'パー';
+        view = '負け';
+      }
+
+      // 3. 表示処理
+      $('#com_hand').text(com_hand);
+      $('#view').text(view);
+
+    });
+
+    // チョキ
+    $('#cho_btn').on('click', function () {
+      // alert('OK')
+
+      // 1. 乱数(1~5)
+      const cho = Math.floor(Math.random() * 3);
+      console.log(cho);
+
+      // 2. 分岐処理
+      let view = '';
+      let com_hand = '';
+
+      if (cho === 0) {
+        com_hand = 'グー';
+        view = '負け';
+      } else if (cho === 1) {
+        com_hand = 'チョキ';
+        view = 'あいこ';
+      } else {
+        com_hand = 'パー';
+        view = '勝ち';
+      }
+
+      // 3. 表示処理
+      $('#com_hand').text(com_hand);
+      $('#view').text(view);
+
+    });
+    // パー
+    $('#par_btn').on('click', function () {
+      // alert('OK')
+
+      // 1. 乱数(1~5)
+      const par = Math.floor(Math.random() * 3);
+      console.log(par);
+
+      // 2. 分岐処理
+      let view = '';
+      let com_hand = '';
+
+      if (par === 0) {
+        com_hand = 'グー';
+        view = '勝ち';
+      } else if (par === 1) {
+        com_hand = 'チョキ';
+        view = '負け';
+      } else {
+        com_hand = 'パー';
+        view = 'あいこ';
+      }
+
+      // 3. 表示処理
+      $('#com_hand').text(com_hand);
+      $('#view').text(view);
+
+    });
+
+
+  </script>
+
+</body>
+
+</html>
